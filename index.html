@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>سایت خرید و فروش</title>
+  <style>
+    body {
+      font-family: Tahoma, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+      text-align: center;
+    }
+    header {
+      background: #0077cc;
+      color: white;
+      padding: 20px;
+    }
+    h1 { margin: 0; }
+    main {
+      padding: 20px;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: right;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>سایت خرید و فروش کالا</h1>
+  </header>
+
+  <main>
+    <!-- فرم خرید -->
+    <form method="POST">
+      <h2>فرم خرید کالا</h2>
+      <label>نام شما:
+        <input type="text" name="name" required>
+      </label>
+      <label>ایمیل:
+        <input type="email" name="email" required>
+      </label>
+      <label>نام کالا:
+        <input type="text" name="product" required>
+      </label>
+      <button type="submit">خرید</button>
+    </form>
+
+    <!-- فرم فروش -->
+    <form method="POST">
+      <h2>فرم فروش کالا</h2>
+      <label>نام شما:
+        <input type="text" name="name" required>
+      </label>
+      <label>ایمیل:
+        <input type="email" name="email" required>
+      </label>
+      <label>کالای فروشی:
+        <input type="text" name="product" required>
+      </label>
+      <button type="submit">فروش</button>
+    </form>
+  </main>
+
+  <!-- اسکریپت ارسال به FormSubmit -->
+  <script>
+  (function(){
+    const endpoint = 'https://formsubmit.co/mrsad2570@gmail.com';
+    function submitToFormSubmit(event){
+      var submitter = event.submitter || null;
+      try {
+        if (submitter) {
+          var txt = (submitter.value || submitter.textContent || '').toString().trim();
+          if (!/خرید|فروش/.test(txt)) {
+            return;
+          }
+        }
+      } catch(err){ return; }
+
+      event.preventDefault();
+      var form = event.target;
+      var fd = new FormData(form);
+      fd.append('_subject', 'فرم خرید/فروش از وبسایت');
+
+      fetch(endpoint, { method: 'POST', body: fd })
+        .then(function(){
+          alert('اطلاعات با موفقیت ارسال شد ✅');
+          form.reset();
+        })
+        .catch(function(){
+          alert('خطا در ارسال اطلاعات ❌');
+        });
+    }
+    document.addEventListener('submit', submitToFormSubmit, true);
+  })();
+  </script>
+</body>
+</html>
