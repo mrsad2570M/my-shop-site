@@ -1,0 +1,34 @@
+{
+  "short_name": "سایبان",
+  "name": "Pre-owned Sayeban",
+  "description": "پلتفرم امن خرید و فروش امانتی کالای دست دوم.",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏪</text></svg>",
+      "type": "image/svg+xml",
+      "sizes": "48x48 72x72 96x96 128x128 144x144 192x192 512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#4f46e5",
+  "background_color": "#ffffff",
+  "shortcuts": [
+    {
+      "name": "فروش کالا",
+      "short_name": "فروش",
+      "url": "/#register",
+      "description": "فرم ثبت درخواست فروش کالای خود را پر کنید",
+      "icons": [{ "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>", "sizes": "192x192" }]
+    },
+    {
+      "name": "خرید کالا",
+      "short_name": "خرید",
+      "url": "/#register",
+      "description": "فرم ثبت درخواست خرید کالای مورد نظر خود را پر کنید",
+      "icons": [{ "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>", "sizes": "192x192" }]
+    }
+  ]
+}

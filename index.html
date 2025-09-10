@@ -1,125 +1,76 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <title>سایت خرید و فروش</title>
-  <style>
-    body {
-      font-family: Tahoma, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 0;
-      direction: rtl;
-      text-align: center;
-    }
-    header {
-      background: #0077cc;
-      color: white;
-      padding: 20px;
-    }
-    h1 { margin: 0; }
-    main {
-      padding: 20px;
-    }
-    form {
-      background: white;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 400px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      text-align: right;
-    }
-    label {
-      display: block;
-      margin-bottom: 10px;
-    }
-    input, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background: #0077cc;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #005fa3;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>سایت خرید و فروش کالا</h1>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏪</text></svg>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pre-owned Sayeban - خرید و فروش امانتی</title>
+    <meta name="description" content="بهترین مکان برای خرید و فروش امانتی کالاهای دست دوم با کیفیت. با گارانتی، قیمت مناسب و خدمات عالی." />
 
-  <main>
-    <!-- فرم خرید -->
-    <form method="POST">
-      <h2>فرم خرید کالا</h2>
-      <label>نام شما:
-        <input type="text" name="name" required>
-      </label>
-      <label>ایمیل:
-        <input type="email" name="email" required>
-      </label>
-      <label>نام کالا:
-        <input type="text" name="product" required>
-      </label>
-      <button type="submit">خرید</button>
-    </form>
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="سایبان">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏪</text></svg>">
 
-    <!-- فرم فروش -->
-    <form method="POST">
-      <h2>فرم فروش کالا</h2>
-      <label>نام شما:
-        <input type="text" name="name" required>
-      </label>
-      <label>ایمیل:
-        <input type="email" name="email" required>
-      </label>
-      <label>کالای فروشی:
-        <input type="text" name="product" required>
-      </label>
-      <button type="submit">فروش</button>
-    </form>
-  </main>
-
-  <!-- اسکریپت ارسال به FormSubmit -->
-  <script>
-  (function(){
-    const endpoint = 'https://formsubmit.co/mrsad2570@gmail.com';
-    function submitToFormSubmit(event){
-      var submitter = event.submitter || null;
-      try {
-        if (submitter) {
-          var txt = (submitter.value || submitter.textContent || '').toString().trim();
-          if (!/خرید|فروش/.test(txt)) {
-            return;
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Vazirmatn', 'sans-serif'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 1s ease-out forwards',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(50px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              }
+            }
           }
         }
-      } catch(err){ return; }
-
-      event.preventDefault();
-      var form = event.target;
-      var fd = new FormData(form);
-      fd.append('_subject', 'فرم خرید/فروش از وبسایت');
-
-      fetch(endpoint, { method: 'POST', body: fd })
-        .then(function(){
-          alert('اطلاعات با موفقیت ارسال شد ✅');
-          form.reset();
-        })
-        .catch(function(){
-          alert('خطا در ارسال اطلاعات ❌');
-        });
-    }
-    document.addEventListener('submit', submitToFormSubmit, true);
-  })();
-  </script>
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Offset for the fixed header so that section titles aren't hidden on jump */
+      section[id] {
+        scroll-margin-top: 80px;
+      }
+      @media (max-width: 768px) {
+        section[id] {
+          scroll-margin-top: 72px;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react/": "https://esm.sh/react@18.3.1/",
+    "react-dom/": "https://esm.sh/react-dom@18.3.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
 </body>
 </html>
