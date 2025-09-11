@@ -1,26 +1,26 @@
 const CACHE_NAME = 'preowned-sayeban-cache-v2';
 // List all critical assets for the app shell to be cached.
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/metadata.json',
-  '/index.tsx',
-  '/App.tsx',
-  '/types.ts',
-  '/components/Header.tsx',
-  '/components/Hero.tsx',
-  '/components/Register.tsx',
-  '/components/Services.tsx',
-  '/components/Features.tsx',
-  '/components/Stats.tsx',
-  '/components/Testimonials.tsx',
-  '/components/Contact.tsx',
-  '/components/Footer.tsx',
-  '/components/QuickActions.tsx',
-  '/components/Notification.tsx',
-  '/components/Terms.tsx',
-  '/components/Icons.tsx'
+  '/my-shop-site/',
+  '/my-shop-site/index.html',
+  '/my-shop-site/manifest.json',
+  '/my-shop-site/metadata.json',
+  '/my-shop-site/index.tsx',
+  '/my-shop-site/App.tsx',
+  '/my-shop-site/types.ts',
+  '/my-shop-site/components/Header.tsx',
+  '/my-shop-site/components/Hero.tsx',
+  '/my-shop-site/components/Register.tsx',
+  '/my-shop-site/components/Services.tsx',
+  '/my-shop-site/components/Features.tsx',
+  '/my-shop-site/components/Stats.tsx',
+  '/my-shop-site/components/Testimonials.tsx',
+  '/my-shop-site/components/Contact.tsx',
+  '/my-shop-site/components/Footer.tsx',
+  '/my-shop-site/components/QuickActions.tsx',
+  '/my-shop-site/components/Notification.tsx',
+  '/my-shop-site/components/Terms.tsx',
+  '/my-shop-site/components/Icons.tsx'
 ];
 
 self.addEventListener('install', event => {
